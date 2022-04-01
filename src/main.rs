@@ -1,4 +1,4 @@
-use reqwest;
+use attohttpc;
 use serde::{Deserialize, Serialize};
 use std::fs::File;
 use std::io::prelude::*;
@@ -10,19 +10,15 @@ use std::net::Ipv4Addr;
 async fn main() {
     let url = format!("https://relays.syncthing.net/endpoint");
 
-    let client = reqwest::Client::new();
-
-    let response = client
-        .get(url)
+    let response = attohttpc::get(url)
         .header("CONTENT_TYPE", "application/json")
         .header("ACCEPT", "application/json")
         .send()
-        .await
         .unwrap();
     
     match response.status() {
-        reqwest::StatusCode::OK => {
-            match response.json::<APIResponse>().await {
+        attohttpc::StatusCode::OK => {
+            match response.json::<APIResponse>() {
                 Ok(parsed) => {
                     let mut ipv4_list: Vec<Ipv4Addr> = Vec::new();
                     for relay in parsed.relays {
