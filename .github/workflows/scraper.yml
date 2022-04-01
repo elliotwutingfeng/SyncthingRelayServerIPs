@@ -1,0 +1,41 @@
+name: scraper
+
+on:
+    workflow_dispatch:
+    schedule:
+        - cron: "*/5 * * * *" # runs every fifth minute
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout repo content
+              uses: actions/checkout@v3
+
+            - name: setup rust toolchain
+              uses: actions-rs/toolchain@v1
+              with:
+                  toolchain: stable
+
+            - name: cargo build
+              uses: actions-rs/cargo@v1
+              with:
+                  command: build
+                  args: --release --all-features
+
+            - name: cargo run # get the latest data
+              uses: actions-rs/cargo@v1
+              with:
+                  command: run
+
+            - name: commit files
+              run: |
+                  git config --local user.email "action@github.com"
+                  git config --local user.name "GitHub Action"
+                  git add -A
+                  git diff --name-only --cached --exit-code || git commit -am "update allowlist"
+            - name: push changes
+              uses: ad-m/github-push-action@v0.6.0
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  branch: main
