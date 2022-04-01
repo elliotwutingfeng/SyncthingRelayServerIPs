@@ -3,7 +3,7 @@ name: scraper
 on:
     workflow_dispatch:
     schedule:
-        - cron: "*/5 * * * *" # runs every fifth minute
+        - cron: "0 12 * * *" # runs at 12:00 UTC everyday
 
 jobs:
     build:
@@ -16,12 +16,6 @@ jobs:
               uses: actions-rs/toolchain@v1
               with:
                   toolchain: stable
-
-            - name: cargo build
-              uses: actions-rs/cargo@v1
-              with:
-                  command: build
-                  args: --release --all-features
 
             - name: cargo run # get the latest data
               uses: actions-rs/cargo@v1

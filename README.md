@@ -7,7 +7,7 @@
 [![scraper](https://img.shields.io/github/workflow/status/elliotwutingfeng/SyncthingRelayServerIPs/scraper?label=SCRAPER&style=for-the-badge)](https://github.com/elliotwutingfeng/SyncthingRelayServerIPs/actions/workflows/scraper.yml)
 <img src="https://img.shields.io/tokei/lines/github/elliotwutingfeng/SyncthingRelayServerIPs?label=Total%20Allowlist%20IPs&style=for-the-badge" alt="Total Allowlist IPs"/>
 
-Machine-readable `.txt` allowlist of [Syncthing Relay Server IP Addresses](https://relays.syncthing.net), updated every 5 minutes.
+Machine-readable `.txt` allowlist of [Syncthing Relay Server IP Addresses](https://relays.syncthing.net), updated once a day.
 
 **Disclaimer:** _This project is not sponsored, endorsed, or otherwise affiliated with Syncthing._
 
