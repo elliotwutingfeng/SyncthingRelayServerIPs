@@ -1,4 +1,3 @@
-use attohttpc;
 use serde::{Deserialize, Serialize};
 use std::fs::File;
 use std::io::prelude::*;
@@ -8,7 +7,7 @@ use std::net::Ipv4Addr;
 #[allow(dead_code)]
 #[tokio::main]
 async fn main() {
-    let url = format!("https://relays.syncthing.net/endpoint");
+    let url = "https://relays.syncthing.net/endpoint";
 
     let response = attohttpc::get(url)
         .header("CONTENT_TYPE", "application/json")
@@ -25,7 +24,7 @@ async fn main() {
                         let ip_address: Ipv4Addr = relay.url
                         .split("relay://") // remove "relay://" prefix
                         .collect::<Vec<_>>()[1]
-                        .split(":") // remove port number suffix
+                        .split(':') // remove port number suffix
                         .collect::<Vec<_>>()[0]
                         .parse()
                         .expect("Unable to parse ipv4 address");
