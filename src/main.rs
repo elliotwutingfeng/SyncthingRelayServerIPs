@@ -3,21 +3,26 @@ use std::fs::File;
 use std::io::prelude::*;
 use std::path::Path;
 use std::net::Ipv4Addr;
+use reqwest;
 
 #[allow(dead_code)]
 #[tokio::main]
 async fn main() {
     let url = "https://relays.syncthing.net/endpoint";
 
-    let response = attohttpc::get(url)
+    let client = reqwest::Client::new();
+
+    let response = client
+        .get(url)
         .header("CONTENT_TYPE", "application/json")
         .header("ACCEPT", "application/json")
         .send()
+        .await
         .unwrap();
     
     match response.status() {
-        attohttpc::StatusCode::OK => {
-            match response.json::<APIResponse>() {
+        reqwest::StatusCode::OK => {
+            match response.json::<APIResponse>().await {
                 Ok(parsed) => {
                     let mut ipv4_list: Vec<Ipv4Addr> = Vec::new();
                     for relay in parsed.relays {

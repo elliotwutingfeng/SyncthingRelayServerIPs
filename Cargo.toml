@@ -8,7 +8,7 @@ name = "syncthing_relay_server_ips"
 path = "./src/main.rs"
 
 [dependencies]
-attohttpc = { version = "0.18.0", features = ["json"] }
 futures = "0.3"
+reqwest = { version = "0.11", features = ["json"] }
 serde = { version = "1.0", features = ["derive"] }
 tokio = { version = "1.17.0", features = ["full"] }
