@@ -3,7 +3,6 @@ use std::fs::File;
 use std::io::prelude::*;
 use std::path::Path;
 use std::net::Ipv4Addr;
-use reqwest;
 
 #[allow(dead_code)]
 #[tokio::main]
