@@ -13,11 +13,12 @@ Machine-readable `.txt` allowlist of [Syncthing Relay Server IP Addresses](https
 **Disclaimer:** _This project is not sponsored, endorsed, or otherwise affiliated with Syncthing._
 
 ## Allowlist download
+
 You may download the allowlist [here](ips.txt?raw=1)
 
 ## Requirements
 
--   Rust >= 1.59.0
+-   Rust >= 1.61.0
 
 ## Setup instructions
 
