@@ -18,7 +18,7 @@ You may download the allowlist [here](ips.txt?raw=1)
 
 ## Requirements
 
--   Rust >= 1.61.0
+-   Rust >= 1.64.0
 
 ## Setup instructions
 
