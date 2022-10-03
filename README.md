@@ -6,7 +6,7 @@
 [![GitHub license](https://img.shields.io/badge/LICENSE-BSD--3--CLAUSE-GREEN?style=for-the-badge)](LICENSE)
 [![scraper](https://img.shields.io/github/workflow/status/elliotwutingfeng/SyncthingRelayServerIPs/scraper?label=SCRAPER&style=for-the-badge)](https://github.com/elliotwutingfeng/SyncthingRelayServerIPs/actions/workflows/scraper.yml)
 [![Rust Report Card](https://rust-reportcard.xuri.me/badge/github.com/elliotwutingfeng/SyncthingRelayServerIPs?style=for-the-badge)](https://rust-reportcard.xuri.me/report/github.com/elliotwutingfeng/SyncthingRelayServerIPs)
-<img src="https://img.shields.io/tokei/lines/github/elliotwutingfeng/SyncthingRelayServerIPs?label=Total%20Allowlist%20IPs&style=for-the-badge" alt="Total Allowlist IPs"/>
+<img src="https://tokei-rs.onrender.com/b1/github/elliotwutingfeng/SyncthingRelayServerIPs?label=Total%20Allowlist%20IPs&style=for-the-badge" alt="Total Allowlist IPs"/>
 
 Machine-readable `.txt` allowlist of [Syncthing Relay Server IP Addresses](https://relays.syncthing.net), updated every hour.
 
